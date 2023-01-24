@@ -48,6 +48,7 @@ console.log('\nBreaking, 10 of power for 10 sec.')
 bigTruck.break(10, 10, 10)
 console.log('New speed: ' + String(bigTruck.speed()))
 
+// will throw error here
 const newVehicle = new Vehicle('red', 100)
 newVehicle.break(5, 5)
 
