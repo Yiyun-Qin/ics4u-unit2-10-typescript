@@ -7,8 +7,9 @@
  * Since:   2020-01-01
  */
 
-import Truck  from './Truck'
+import Truck from './Truck'
 import Bike from './Bike'
+import Vehicle from './Vehicle'
 
 const bmx = new Bike('Red', 40)
 
@@ -46,5 +47,8 @@ console.log('New speed: ' + String(bigTruck.speed()))
 console.log('\nBreaking, 10 of power for 10 sec.')
 bigTruck.break(10, 10, 10)
 console.log('New speed: ' + String(bigTruck.speed()))
+
+const newVehicle = new Vehicle('red', 100)
+newVehicle.break(5, 5)
 
 console.log('\nDone.')

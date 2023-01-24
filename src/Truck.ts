@@ -30,12 +30,14 @@ class Truck extends Vehicle {
     this.speedCar = this.speedCar - airPressure / 2
   }
 
-  //break (breakPower: number, breakTime: number, airPressure: number): void {
-  //  this.speedCar = this.speedCar - (breakPower * breakTime) - (airPressure * breakTime)
-  //}
+  // break (breakPower: number, breakTime: number, airPressure: number): void {
+  // this.speedCar = this.speedCar - (breakPower * breakTime) - (airPressure * breakTime)
 
   break (breakPower: number, breakTime: number, airPressure: number = 0): void {
     this.speedCar = this.speedCar - (breakPower * breakTime) - (airPressure * breakTime)
+    if (this.speedCar < 0) {
+      this.speedCar = 0
+    }
   }
 }
 

@@ -7,12 +7,15 @@
  */
 
 class Vehicle {
-  private color: string
+  private readonly color: string
   protected speedCar: number = 0
   private readonly maximumSpeed: number
 
   // constructor
   constructor (color: string, maxSpeed: number) {
+    if (this.constructor === Vehicle) {
+      throw new Error("Abstract classes can't be instantiated.")
+    }
     this.color = color
     this.maximumSpeed = maxSpeed
   }
@@ -38,7 +41,7 @@ class Vehicle {
     this.speedCar = accelerationPower * accelerationTime + this.speedCar
   }
 
-  break(breakPower: number, breakTime: number): void {
+  break (breakPower: number, breakTime: number): void {
     this.speedCar = this.speedCar - breakPower * breakTime
 
     if (this.speedCar < 0) {
